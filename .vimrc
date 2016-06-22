@@ -229,13 +229,5 @@ au Syntax * RainbowParenthesesLoadBraces
 " Enable Powerline fonts for Airline
 let g:airline_powerline_fonts = 1
 
-" Open a NERDTree automatically when vim starts up
-autocmd vimenter * NERDTree
-
-" Open a NERDTree automatically when vim 
-" starts up if no files were specified 
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
 " Open NERDTree with Ctrl+n
 map <C-n> :NERDTreeToggle<CR>
