@@ -19,6 +19,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 " Personal Plugins
 " For GitHub repos, you specify plugins using the
@@ -228,6 +229,14 @@ au Syntax * RainbowParenthesesLoadBraces
 
 " Enable Powerline fonts for Airline
 let g:airline_powerline_fonts = 1
+
+" Automatically displays all buffers when there's only one tab open 
+let g:airline#extensions#tabline#enabled = 1
+
+" Separators can be configured independently for the tabline, so here is how you
+" can define "straight" tabs
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
 
 " Open NERDTree with Ctrl+n
 map <C-n> :NERDTreeToggle<CR>
