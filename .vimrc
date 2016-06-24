@@ -238,6 +238,13 @@ let g:airline_powerline_fonts = 1
 " Automatically displays all buffers when there's only one tab open 
 let g:airline#extensions#tabline#enabled = 1
 
+" Show buffer numbers
+let g:airline#extensions#tabline#buffer_nr_show = 1
+
+" Smartly uniquify buffers names with similar filename, 
+" suppressing common parts of paths.
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+
 " Separators can be configured independently for the tabline, so here is how you
 " can define "straight" tabs
 let g:airline#extensions#tabline#left_sep = ' '
