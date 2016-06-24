@@ -255,3 +255,7 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 
 " Open NERDTree with Ctrl+n
 map <C-n> :NERDTreeToggle<CR>
+
+" Hotkeys for changing buffers
+:nnoremap <Tab> :bnext<CR>
+:nnoremap <S-Tab> :bprevious<CR>
