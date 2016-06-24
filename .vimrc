@@ -245,6 +245,9 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 " suppressing common parts of paths.
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 
+" Show just the filename when it is unique
+let g:airline#extensions#tabline#fnamemod = ':t'
+
 " Separators can be configured independently for the tabline, so here is how you
 " can define "straight" tabs
 let g:airline#extensions#tabline#left_sep = ' '
