@@ -9,11 +9,15 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+
+
+" Personal Plugins
+" For GitHub repos, you specify plugins using the
+" 'user/repository' format
+" To get plugins from Vim Scripts, you can reference the plugin
+" by name as it appears on the site
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'guns/vim-clojure-static'
-Plugin 'guns/vim-clojure-highlight'
-Plugin 'kien/rainbow_parentheses.vim'
-Plugin 'tpope/vim-fireplace'
+
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/nerdtree'
@@ -21,11 +25,11 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'ctrlpvim/ctrlp.vim'
 
-" Personal Plugins
-" For GitHub repos, you specify plugins using the
-" 'user/repository' format
-" To get plugins from Vim Scripts, you can reference the plugin
-" by name as it appears on the site
+" Clojure-specific
+Plugin 'guns/vim-clojure-static'
+Plugin 'guns/vim-clojure-highlight'
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'tpope/vim-fireplace'
 
 
 " All of your Plugins must be added before the following line
