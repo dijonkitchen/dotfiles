@@ -25,6 +25,7 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
+Plugin 'plasticboy/vim-markdown'
 
 " Clojure-specific
 Plugin 'guns/vim-clojure-static'
