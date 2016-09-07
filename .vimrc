@@ -31,10 +31,13 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'scrooloose/syntastic'
 
 " Clojure-specific
-Plugin 'guns/vim-clojure-static'
-Plugin 'guns/vim-clojure-highlight'
-Plugin 'kien/rainbow_parentheses.vim'
-Plugin 'tpope/vim-fireplace'
+" Plugin 'guns/vim-clojure-static'
+" Plugin 'guns/vim-clojure-highlight'
+" Plugin 'kien/rainbow_parentheses.vim'
+" Plugin 'tpope/vim-salve'
+" Plugin 'tpope/vim-projectionist'
+" Plugin 'tpope/vim-dispatch'
+" Plugin 'tpope/vim-fireplace'
 
 
 " All of your Plugins must be added before the following line
