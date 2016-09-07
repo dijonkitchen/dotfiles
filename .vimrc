@@ -264,6 +264,9 @@ map <C-n> :NERDTreeToggle<CR>
 :nnoremap <Tab> :bnext<CR>
 :nnoremap <S-Tab> :bprevious<CR>
 
+" Disable vim-markdown folding
+let g:vim_markdown_folding_disabled = 1
+
 " Syntastic recommended settings excluding some because of vim-airline
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_check_on_open = 1
