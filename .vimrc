@@ -25,7 +25,10 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
+
 Plugin 'plasticboy/vim-markdown'
+
+Plugin 'scrooloose/syntastic'
 
 " Clojure-specific
 Plugin 'guns/vim-clojure-static'
@@ -260,3 +263,10 @@ map <C-n> :NERDTreeToggle<CR>
 " Hotkeys for changing buffers
 :nnoremap <Tab> :bnext<CR>
 :nnoremap <S-Tab> :bprevious<CR>
+
+" Syntastic recommended settings excluding some because of vim-airline
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_ruby_checkers = ['rubocop']
