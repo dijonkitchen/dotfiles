@@ -91,6 +91,7 @@ export DEFAULT_USER='jonchen'
 alias cd-='cd -'
 alias e='vim'
 alias e.='e .'
+alias ls='ls -hAl'
 
 # From brew install zsh notes for online help
 unalias run-help
