@@ -89,7 +89,7 @@ source $ZSH/oh-my-zsh.sh
 export DEFAULT_USER='jonchen'
 
 alias cd-='cd -'
-alias e='vim'
+alias e='atom'
 alias e.='e .'
 alias ls='ls -GAlph'
 
@@ -107,6 +107,6 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 if which rbenv > /dev/null; then eval "$(rbenv init - zsh)"; fi
 
 # For Postgres gem to work with Postgres App
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 
 # API KEYS

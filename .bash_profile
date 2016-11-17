@@ -101,6 +101,6 @@ alias .6='cd ../../../../../../'            # Go back 6 directory levels
 
 alias g='git'
 
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 
 # API KEYS
