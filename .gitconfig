@@ -45,7 +45,7 @@
 	b = branch
 	p = pull
 	d = diff
-	po = push origin
+	dc = diff --cached
 
 [user]
 	name = Jonathan Chen
