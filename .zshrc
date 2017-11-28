@@ -89,7 +89,7 @@ source $ZSH/oh-my-zsh.sh
 export DEFAULT_USER='jonchen'
 
 alias cd-='cd -'
-alias e='atom'
+alias e='code'
 alias e.='e .'
 alias ls='ls -GAlph'
 
