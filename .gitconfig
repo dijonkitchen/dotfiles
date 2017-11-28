@@ -45,7 +45,6 @@
 	b = branch
 	p = pull
 	d = diff
-	po = push origin
 
 [user]
 	name = Jonathan Chen
