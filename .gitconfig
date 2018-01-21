@@ -28,7 +28,7 @@
     --date=relative
 
   # Shorthand for commit, also enforces diff display in editor before commit
-	ci = commit
+	ci = commit -S
 
   # Shorthand for a less noisy status
 	s = status
@@ -50,6 +50,7 @@
 [user]
 	name = Jonathan Chen
 	email = dijonkitchen@users.noreply.github.com
+	signingkey = 0D672F28CEA8F34E
 [filter "lfs"]
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
