@@ -20,6 +20,7 @@ if which rbenv > /dev/null; then eval "$(rbenv init - zsh)"; fi
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 
 source $ZSH/oh-my-zsh.sh
+PROMPT='%{%f%b%k%}$(build_prompt) '$'\n$ '
 
 # From brew install zsh notes for online help
 unalias run-help
