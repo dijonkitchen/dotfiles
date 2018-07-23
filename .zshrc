@@ -16,9 +16,6 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 # export SHELL="/usr/local/bin/zsh"
 if which rbenv > /dev/null; then eval "$(rbenv init - zsh)"; fi
 
-# For Postgres gem to work with Postgres App
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
-
 source $ZSH/oh-my-zsh.sh
 source $HOME/dotfiles/settings.sh
 
