@@ -1,6 +1,5 @@
 PROMPT='%{%f%b%k%}$(build_prompt) '$'\n$ '
 
-export DEFAULT_USER='jonchen'
 export GPG_TTY=$(tty)
 
 alias cd-='cd -'
