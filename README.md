@@ -13,7 +13,8 @@ Install https://github.com/robbyrussell/oh-my-zsh
 
 Replace `.zshrc` with the one from dotfiles. 
 
+The only other main setting is using [Input Sans](http://input.fontbureau.com) as my preferred font! Just download it and add it to your Font book (on macOS)!
+
 ## VSCode settings
 VSCode settings sync gist ID is [`489f8ce5dcee2319408edeccc20bac41`](https://gist.github.com/dijonkitchen/489f8ce5dcee2319408edeccc20bac41).
 
-The only other main setting is using [Input Sans](http://input.fontbureau.com) as my preferred font! Just download it and add it to your Font book (on macOS)!
