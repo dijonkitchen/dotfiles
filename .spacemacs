@@ -317,6 +317,8 @@ you should place your code here."
   (add-hook 'focus-out-hook 'do-auto-save)
 
   (setq ns-use-srgb-colorspace nil)
+
+  (setq clojure-align-forms-automatically t)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
