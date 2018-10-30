@@ -50,7 +50,7 @@
 
 [user]
 	name = Jonathan Chen
-	email = dijonkitchen@users.noreply.github.com
+	email = 11434205+dijonkitchen@users.noreply.github.com
 	signingkey = 0D672F28CEA8F34E
 [filter "lfs"]
 	clean = git-lfs clean %f
