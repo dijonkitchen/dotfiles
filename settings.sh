@@ -1,6 +1,7 @@
-PROMPT='%{%f%b%k%}$(build_prompt) '$'\n$ '
-
-export GPG_TTY=$(tty)
+source /usr/local/etc/bash_completion.d/git-completion.bash
+source /usr/local/etc/bash_completion.d/git-prompt.sh
+export GIT_PS1_SHOWDIRTYSTATE=1
+export PS1='\w$(__git_ps1 " (%s)")\$ '
 
 alias cd-='cd -'
 alias e='emacs'
