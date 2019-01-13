@@ -1,6 +1,6 @@
 [core]
   # Excludesfiles allows us to set a global list of things to ignore
-  excludesfile = ~/.gitignore_global
+  excludesfile = ~/dotfiles/.gitignore_global
 	editor = vim
 	ignorecase = false
 
@@ -27,20 +27,8 @@
     --abbrev-commit \
     --date=relative
 
-  # Shorthand for commit, also enforces diff display in editor before commit
 	ci = commit -S
-
-  # Shorthand for a less noisy status
 	s = status
-
-  # More sensible names for adding and removing files from the readme
-  stage = add
-  unstage = reset HEAD
-
-  # Edit the last commit
-  amend= commit --verbose --amend
-
-  # Jon added
 	a = add -A
 	b = branch
 	p = pull
@@ -52,12 +40,9 @@
 	name = Jonathan Chen
 	email = 11434205+dijonkitchen@users.noreply.github.com
 	signingkey = 0D672F28CEA8F34E
-[filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
-	required = true
 
 [commit]
-  template = ~/.gitmessage
+  template = ~/dotfiles/.gitmessage
+
 [fetch]
 	prune = true
