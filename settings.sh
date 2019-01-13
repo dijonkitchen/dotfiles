@@ -13,4 +13,7 @@ alias cd-='cd -'
 alias e='emacs'
 alias e.='e .'
 alias ls='ls -GAlph'
+
+# For faster typing and autocomplete with alias
 alias g='git'
+__git_complete g __git_main
