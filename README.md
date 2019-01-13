@@ -10,6 +10,7 @@ To install all the brew packages from the [Brewfile](https://github.com/Homebrew
 `brew bundle`
 
 Replace or add `.bash_profile` with the one from dotfiles.
+Replace or add `.gitconfig` with the one from dotfiles.
 
 The only other main setting is using [Input Sans](http://input.fontbureau.com) as my preferred font! Just download it and add it to your Font book (on macOS)!
 
