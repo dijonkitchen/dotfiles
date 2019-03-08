@@ -38,3 +38,4 @@ HEROKU_AC_BASH_SETUP_PATH=$HOME/Library/Caches/heroku/autocomplete/bash_setup &&
 
 export JAVA_TOOL_OPTIONS="-Dapple.awt.UIElement=true"
 
+export PAGER=less
