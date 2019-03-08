@@ -21,6 +21,8 @@ export GIT_PS1_SHOWUNTRACKEDFILES=1
 export GIT_PS1_SHOWUPSTREAM="auto"
 export GIT_PS1_SHOWCOLORHINTS=1
 
+export JAVA_TOOL_OPTIONS="-Dapple.awt.UIElement=true"
+
 export PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND ;}'__git_ps1 "\[\e[1m\]\w\[\e[0m\]" "\\\$ "'
 # export PS1='\w$(__git_ps1 " (%s)")\$ '
 
