@@ -459,6 +459,9 @@ you should place your code here."
   (add-hook 'focus-out-hook 'do-auto-save)
 
   (setq clojure-align-forms-automatically t)
+  (setq cider-default-cljs-repl 'figwheel)
+
+  (spacemacs/toggle-automatic-symbol-highlight-on)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
