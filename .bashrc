@@ -34,7 +34,7 @@ alias ls='ls -GAlph'
 # heroku autocomplete setup
 HEROKU_AC_BASH_SETUP_PATH=$HOME/Library/Caches/heroku/autocomplete/bash_setup && test -f $HEROKU_AC_BASH_SETUP_PATH && source $HEROKU_AC_BASH_SETUP_PATH;
 
-export SPACEMACSDIR="./.spacemacs/"
+export SPACEMACSDIR="./.spacemacs.d/"
 
 export JAVA_TOOL_OPTIONS="-Dapple.awt.UIElement=true"
 
