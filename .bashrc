@@ -27,7 +27,7 @@ alias g='git'
 __git_complete g __git_main
 
 alias cd-='cd -'
-alias e='emacs'
+alias e='emacsclient -cna ""'
 alias e.='e .'
 alias ls='ls -GAlph'
 
