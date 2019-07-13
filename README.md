@@ -14,3 +14,8 @@ Replace or add `.gitconfig` with the one from dotfiles.
 
 The only other main setting is using [Input Sans](http://input.fontbureau.com) as my preferred font! Just download it and add it to your Font book (on macOS)!
 
+Restart editor and/or sync new settings in Spacemacs.
+
+## Backup brew packages
+
+`rm Brewfile && brew bundle dump`
