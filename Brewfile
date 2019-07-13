@@ -1,3 +1,4 @@
+tap "borkdude/brew"
 tap "d12frosted/emacs-plus"
 tap "homebrew/bundle"
 tap "homebrew/cask"
@@ -11,6 +12,7 @@ brew "clojure"
 brew "git"
 brew "leiningen"
 brew "postgresql", restart_service: true
+brew "borkdude/brew/clj-kondo"
 brew "d12frosted/emacs-plus/emacs-plus"
 cask "gitify"
 cask "google-chrome"
