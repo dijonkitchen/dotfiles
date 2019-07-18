@@ -353,7 +353,7 @@ It should only modify the values of Spacemacs settings."
 
    ;; If non-nil `smartparens-strict-mode' will be enabled in programming modes.
    ;; (default nil)
-   dotspacemacs-smartparens-strict-mode nil
+   dotspacemacs-smartparens-strict-mode t
 
    ;; If non-nil pressing the closing parenthesis `)' key in insert mode passes
    ;; over any automatically added closing parenthesis, bracket, quote, etc…
@@ -466,6 +466,7 @@ you should place your code here."
     :ensure t
     :config
     (require 'flycheck-clj-kondo))
+  (spacemacs/toggle-evil-safe-lisp-structural-editing-on-register-hooks)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
