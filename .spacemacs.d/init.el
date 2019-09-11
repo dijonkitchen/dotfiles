@@ -37,7 +37,8 @@ This function should only modify configuration layer settings."
      themes-megapack
      sql
      osx
-     clojure
+     (clojure :variables
+              clojure-enable-linters 'clj-kondo)
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
@@ -63,7 +64,7 @@ This function should only modify configuration layer settings."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(flycheck-clj-kondo)
+   dotspacemacs-additional-packages '()
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
 
@@ -462,10 +463,6 @@ you should place your code here."
 
   (setq clojure-align-forms-automatically t)
   (setq cider-default-cljs-repl 'figwheel)
-  (use-package clojure-mode
-    :ensure t
-    :config
-    (require 'flycheck-clj-kondo))
   (spacemacs/toggle-evil-safe-lisp-structural-editing-on-register-hooks)
   )
 
