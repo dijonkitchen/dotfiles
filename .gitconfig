@@ -37,7 +37,7 @@
   rebase = rebase -S
 
 [user]
-	name = Jonathan Chen
+	name = JC
 	email = 11434205+dijonkitchen@users.noreply.github.com
 	signingkey = 0D672F28CEA8F34E
 
