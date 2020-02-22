@@ -5,11 +5,13 @@ export GIT_PS1_SHOWUNTRACKEDFILES=1
 export GIT_PS1_SHOWUPSTREAM="auto"
 export GIT_PS1_SHOWCOLORHINTS=1
 
-export PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND ;}'__git_ps1 "\[\e[1m\]\w\[\e[0m\]" "\\\$ "'
-# export PS1='\w$(__git_ps1 " (%s)")\$ '
-
 # For faster typing
 alias g='git'
 
-# autocompalte using alias
-__git_complete g __git_main
+if [ -n "${BASH_VERSION}" ]; then
+    export PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND ;}'__git_ps1 "\[\e[1m\]\w\[\e[0m\]" "\\\$ "'
+    # autocompalte using alias
+    __git_complete g __git_main
+elif [ -n "${ZSH_VERSION}" ]; then
+    precmd () { __git_ps1 "%B%~%b" "%s$ "; }
+fi
