@@ -23,3 +23,5 @@ elif [ -n "${ZSH_VERSION}" ]; then
         FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
     fi
 fi
+
+export PATH="/usr/local/opt/ruby/bin:$PATH"
