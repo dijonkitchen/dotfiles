@@ -23,3 +23,5 @@ elif [ -n "${ZSH_VERSION}" ]; then
         FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
     fi
 fi
+
+eval "$(rbenv init -)"
