@@ -14,6 +14,7 @@ run: `brew bundle`
 In your `$HOME` directory,
 symbolic link these files:
 ```sh
+ln -s ./dotfiles/.zshrc
 ln -s ./dotfiles/.bash_profile
 ln -s ./dotfiles/.bashrc
 ```
@@ -23,10 +24,6 @@ or use your own credentials.
 ```sh
 ln -s ./dotfiles/.gitconfig
 ```
-
-Restart editor
-and/or sync new settings in Spacemacs.
-
 
 ## Typefaces
 
