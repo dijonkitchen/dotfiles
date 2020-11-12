@@ -8,7 +8,7 @@ bindkey -e
 source $HOME/dotfiles/settings.sh
 
 # The following lines were added by compinstall
-zstyle :compinstall filename '/Users/jonchen/.zshrc'
+zstyle :compinstall filename '$HOME/.zshrc'
 
 autoload -Uz compinit
 compinit
