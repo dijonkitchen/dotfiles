@@ -1,5 +1,4 @@
 # Path for brew
-
 test -d /usr/local/bin && export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
 
 if [ -n "${BASH_VERSION}" ]; then
@@ -19,8 +18,9 @@ if [ -n "${BASH_VERSION}" ]; then
     fi
 elif [ -n "${ZSH_VERSION}" ]; then
     if type brew &>/dev/null; then
-        # must be done before compinit
         source "$(brew --prefix)/etc/bash_completion.d/git-prompt.sh"
+
+        # must be done before compinit
         FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
     fi
 fi
