@@ -24,14 +24,23 @@ or use your own credentials.
 ln -s ./dotfiles/.gitconfig
 ```
 
-The only other main setting
-is using [Input Sans](http://input.fontbureau.com)
-as my preferred font!
-Just download it
-and add it to your Font book (on macOS)!
-
 Restart editor
 and/or sync new settings in Spacemacs.
+
+
+## Typefaces
+
+The only other main setting
+is using any of my preferred typefaces:
+- [Jetbrains Mono](https://www.jetbrains.com/lp/mono/)
+- [Fira Code](https://github.com/tonsky/FiraCode)
+- [Input Mono](http://input.fontbureau.com)
+
+Just download any of them
+and add it to your Font book (on macOS).
+
+I use them with ligatures on.
+
 
 ## Backup brew packages
 
