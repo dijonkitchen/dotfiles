@@ -18,8 +18,6 @@ if [ -n "${BASH_VERSION}" ]; then
     fi
 elif [ -n "${ZSH_VERSION}" ]; then
     if type brew &>/dev/null; then
-        source "$(brew --prefix)/etc/bash_completion.d/git-prompt.sh"
-
         # must be done before compinit
         FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
     fi

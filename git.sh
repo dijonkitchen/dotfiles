@@ -13,5 +13,6 @@ if [ -n "${BASH_VERSION}" ]; then
     # autocompalte using alias
     __git_complete g __git_main
 elif [ -n "${ZSH_VERSION}" ]; then
+    source "$(brew --prefix)/etc/bash_completion.d/git-prompt.sh"
     precmd () { __git_ps1 "%B%~%b" "%s$ "; }
 fi
