@@ -27,19 +27,18 @@
     --abbrev-commit \
     --date=relative
 
-	ci = commit -S
-	s = status
-	a = add -A
-	b = branch
-	p = pull
-	d = diff
-	dc = diff --cached
-  rebase = rebase -S
+    ci = commit
+    s = status
+    a = add -A
+    b = branch
+    p = pull
+    d = diff
+    dc = diff --cached
+    rebase = rebase
 
 [user]
 	name = JC
 	email = 11434205+dijonkitchen@users.noreply.github.com
-	signingkey = 0D672F28CEA8F34E
 
 [commit]
   template = ~/dotfiles/.gitmessage
