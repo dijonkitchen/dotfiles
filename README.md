@@ -5,6 +5,8 @@ Feel free to review/improve/fork!
 
 ## Setup
 
+Install [nvm](https://github.com/nvm-sh/nvm)
+
 Install [Homebrew](https://brew.sh/)
 
 To install all the brew packages from the
