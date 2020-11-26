@@ -10,7 +10,7 @@ alias g='git'
 
 if [ -n "${BASH_VERSION}" ]; then
     export PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND ;}'__git_ps1 "\[\e[1m\]\w\[\e[0m\]" "\\\$ "'
-    # autocompalte using alias
+    # autocomplete using alias
     __git_complete g __git_main
 elif [ -n "${ZSH_VERSION}" ]; then
     precmd () { __git_ps1 "%B%~%b" "%s$ "; }
