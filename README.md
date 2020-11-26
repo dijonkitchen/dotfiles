@@ -7,6 +7,10 @@ Feel free to review/improve/fork!
 
 Install [nvm](https://github.com/nvm-sh/nvm)
 
+```shell script
+nvm install --lts
+```
+
 Install [Homebrew](https://brew.sh/)
 
 To install all the brew packages from the
