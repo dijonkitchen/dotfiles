@@ -1,4 +1,3 @@
-source $HOME/dotfiles/nodejs.sh
 source $HOME/dotfiles/python.sh
 source $HOME/dotfiles/secrets.sh
 
