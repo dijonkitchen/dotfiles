@@ -37,7 +37,7 @@
     rebase = rebase
 
 [user]
-	name = JC
+	name = Jonathan Chen
 	email = 11434205+dijonkitchen@users.noreply.github.com
 
 [commit]
