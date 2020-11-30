@@ -1,3 +1,5 @@
+#!/bin/bash
+
 alias ls='ls -GAlph'
 
 alias cd-='cd -'
