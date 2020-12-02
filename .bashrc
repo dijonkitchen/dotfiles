@@ -1,1 +1,3 @@
-source $HOME/dotfiles/settings.sh
+#!/bin/bash
+
+source "$HOME/dotfiles/settings.sh"
