@@ -5,13 +5,14 @@ Feel free to review/improve/fork!
 
 ## Setup
 
-Install [nvm](https://github.com/nvm-sh/nvm)
-
-```shell script
-nvm install --lts
-```
-
 Install [Homebrew](https://brew.sh/)
+
+Clone this repository into your `$HOME` directory:
+
+```sh
+cd
+git clone https://github.com/dijonkitchen/dotfiles/
+```
 
 To install all the brew packages from the
 [Brewfile](https://github.com/Homebrew/homebrew-bundle),
@@ -29,6 +30,12 @@ Optionally link `.gitconfig`
 or use your own credentials.
 ```sh
 ln -s ./dotfiles/.gitconfig
+```
+
+Install [nvm](https://github.com/nvm-sh/nvm)
+
+```shell script
+nvm install --lts
 ```
 
 ## Typefaces
