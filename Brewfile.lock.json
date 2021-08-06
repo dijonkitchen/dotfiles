@@ -35,6 +35,25 @@
           }
         }
       }
+    },
+    "tap": {
+      "homebrew/bundle": {
+        "revision": "0fe476075fd5e05a3712d7a4f31db68dc5417cdd"
+      },
+      "homebrew/cask": {
+        "revision": "cc3d935782eecc3c5cddebe64a78baee8da0d7f9"
+      },
+      "homebrew/core": {
+        "revision": "71c41cf0938bae067b09cb7785b1381931283df5"
+      }
+    },
+    "cask": {
+      "rectangle": {
+        "version": "0.48,53",
+        "options": {
+          "full_name": "rectangle"
+        }
+      }
     }
   },
   "system": {
@@ -46,6 +65,14 @@
         "CLT": "12.4.0.0.1.1610135815",
         "Xcode": "12.4",
         "macOS": "10.15.7"
+      },
+      "big_sur": {
+        "HOMEBREW_VERSION": "3.2.6",
+        "HOMEBREW_PREFIX": "/usr/local",
+        "Homebrew/homebrew-core": "71c41cf0938bae067b09cb7785b1381931283df5",
+        "CLT": "12.0.0.32.29",
+        "Xcode": "12.4",
+        "macOS": "11.5"
       }
     }
   }
