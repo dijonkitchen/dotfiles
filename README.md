@@ -60,4 +60,4 @@ I use them with ligatures on.
 
 ## Backup brew packages
 
-`brew bundle dump -f`
+`brew bundle dump -f --file=- > Brewfile`
