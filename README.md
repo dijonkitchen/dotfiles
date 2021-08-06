@@ -10,17 +10,23 @@ Install [Homebrew](https://brew.sh/)
 Clone this repository into your `$HOME` directory:
 
 ```sh
-cd
+cd $HOME
 git clone https://github.com/dijonkitchen/dotfiles/
 ```
 
 To install all the brew packages from the
 [Brewfile](https://github.com/Homebrew/homebrew-bundle),
-run: `brew bundle`
+run: 
+
+```sh
+cd $HOME/dotfiles
+brew bundle
+```
 
 In your `$HOME` directory,
 symbolic link these files:
 ```sh
+cd $HOME
 ln -s ./dotfiles/.zshrc
 ln -s ./dotfiles/.bash_profile
 ln -s ./dotfiles/.bashrc
