@@ -42,6 +42,7 @@ Install [nvm](https://github.com/nvm-sh/nvm)
 
 ```shell script
 nvm install --lts
+nvm alias default lts/*
 ```
 
 ## Typefaces
