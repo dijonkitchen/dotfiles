@@ -45,6 +45,14 @@ nvm install --lts
 nvm alias default lts/*
 ```
 
+### Experimental setup
+
+```sh
+chmod +x ./install.sh
+./install.sh
+```
+Go through prompts.
+
 ## Typefaces
 
 The only other main setting
