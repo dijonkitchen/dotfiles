@@ -5,14 +5,14 @@ Feel free to review/improve/fork!
 
 ## Setup
 
-Install [Homebrew](https://brew.sh/)
-
 Clone this repository into your `$HOME` directory:
 
 ```sh
 cd $HOME
 git clone https://github.com/dijonkitchen/dotfiles/
 ```
+
+Install [Homebrew](https://brew.sh/)
 
 To install all the brew packages from the
 [Brewfile](https://github.com/Homebrew/homebrew-bundle),
