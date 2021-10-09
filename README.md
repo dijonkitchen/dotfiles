@@ -3,55 +3,42 @@
 A backup of my [dotfiles](https://dotfiles.github.io/).
 Feel free to review/improve/fork!
 
+
 ## Setup
 
-Clone this repository into your `$HOME` directory:
+This will download the latest
+installation script
+and run it.
+
+It's also what will be
+automatically used
+by GitHub Codespaces.
 
 ```sh
-cd $HOME
-git clone https://github.com/dijonkitchen/dotfiles/
-```
-
-Install [Homebrew](https://brew.sh/)
-
-To install all the brew packages from the
-[Brewfile](https://github.com/Homebrew/homebrew-bundle),
-run: 
-
-```sh
-cd $HOME/dotfiles
-brew bundle
-```
-
-In your `$HOME` directory,
-symbolic link these files:
-```sh
-cd $HOME
-ln -s ./dotfiles/.zshrc
-ln -s ./dotfiles/.bash_profile
-ln -s ./dotfiles/.bashrc
-```
-
-Optionally link `.gitconfig`
-or use your own credentials.
-```sh
-ln -s ./dotfiles/.gitconfig
-```
-
-Install [nvm](https://github.com/nvm-sh/nvm)
-
-```shell script
+curl https://raw.githubusercontent.com/dijonkitchen/dotfiles/master/install.sh | bash
 nvm install --lts
 nvm alias default lts/*
 ```
 
-### Experimental setup
+Go through prompts,
+if any.
 
-```sh
-chmod +x ./install.sh
-./install.sh
-```
-Go through prompts.
+Open a new terminal
+for latest settings.
+
+### Manual setup
+
+Follow along
+comments in [./install.sh](./install.sh).
+
+### Editor
+
+Modify the `e` alias
+in [./alias.sh](./alias.sh).
+
+You may need to add `/usr/local/bin`
+as [shell script path for IntelliJ](https://www.jetbrains.com/help/idea/working-with-the-ide-features-from-command-line.html#toolbox).
+
 
 ## Typefaces
 
