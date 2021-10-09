@@ -15,6 +15,8 @@ ln -s ./dotfiles/.zshrc
 ln -s ./dotfiles/.bash_profile
 ln -s ./dotfiles/.bashrc
 
+ln -s ./dotfiles/.gitconfig
+
 # JS/Node/nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
 nvm install --lts
