@@ -17,7 +17,7 @@ by GitHub Codespaces.
 ```sh
 curl https://raw.githubusercontent.com/dijonkitchen/dotfiles/master/install.sh | bash
 nvm install --lts
-nvm alias default lts/*
+nvm alias default 'lts/*'
 ```
 
 Go through prompts,
@@ -30,6 +30,13 @@ for latest settings.
 
 Follow along
 comments in [./install.sh](./install.sh).
+
+Then,
+in a new terminal:
+```sh
+nvm install --lts
+nvm alias default 'lts/*'
+```
 
 ### Editor
 
