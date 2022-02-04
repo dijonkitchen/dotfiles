@@ -8,3 +8,5 @@ then
 fi
 
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+
+[[ -f ~/.robinssh/bin/completion.zsh ]] && . ~/.robinssh/bin/completion.zsh
