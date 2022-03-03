@@ -1,7 +1,14 @@
 #!/bin/bash
 
-# Path for brew
-test -d /usr/local/bin && export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
+# TODO: remove this if Homebrew can handle itself on install
+# # Path for brew
+
+# # x86
+# test -d /usr/local/bin && export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
+
+# # ARM
+# test -d /opt/homebrew/bin && export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
+
 
 if [ -n "${BASH_VERSION}" ]; then
     # heroku autocomplete setup
