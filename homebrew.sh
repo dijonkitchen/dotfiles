@@ -10,6 +10,11 @@
 # test -d /opt/homebrew/bin && export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
 
 
+if [ -n "${HOMEBREW_MAIN_USER}" ]; then
+    echo "Using 'brew' as HOMEBREW_MAIN_USER: ${HOMEBREW_MAIN_USER}. Enter your password for single Homebrew use."
+    alias brew='sudo -Hiu $HOMEBREW_MAIN_USER brew'
+fi
+
 if [ -n "${BASH_VERSION}" ]; then
     # heroku autocomplete setup
     HEROKU_AC_BASH_SETUP_PATH=$HOME/Library/Caches/heroku/autocomplete/bash_setup && test -f $HEROKU_AC_BASH_SETUP_PATH && source $HEROKU_AC_BASH_SETUP_PATH;
