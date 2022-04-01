@@ -1,13 +1,12 @@
 #!/bin/bash
 
-# TODO: remove this if Homebrew can handle itself on install
-# # Path for brew
+# Path for brew
 
-# # x86
-# test -d /usr/local/bin && export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
+# x86
+test -d /usr/local/bin && export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
 
-# # ARM
-# test -d /opt/homebrew/bin && export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
+# ARM
+test -d /opt/homebrew/bin && export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
 
 
 if [ -n "${HOMEBREW_MAIN_USER}" ]; then
