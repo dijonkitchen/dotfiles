@@ -23,5 +23,5 @@ ln -s ./dotfiles/.bashrc
 # or use your own credentials.
 ln -s ./dotfiles/.gitconfig
 
-# Install [nvm](https://github.com/nvm-sh/nvm)
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+# Install latest [nvm](https://github.com/nvm-sh/nvm) `master` branch install script
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
