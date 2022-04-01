@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# TODO: potentially check for existing homebrew installation and warn user to add main user
 if [ -n "${HOMEBREW_MAIN_USER}" ]; then
     echo "Using 'brew' as HOMEBREW_MAIN_USER: ${HOMEBREW_MAIN_USER}. Enter your password for single Homebrew use."
     alias brew='sudo -Hiu $HOMEBREW_MAIN_USER brew'
