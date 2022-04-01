@@ -12,7 +12,9 @@ source "$HOME/dotfiles/alias.sh"
 source "$HOME/dotfiles/javascript.sh"
 source "$HOME/dotfiles/ruby.sh"
 
-source "$HOME/dotfiles/work.sh"
+if [ -n "${WORKMODE}" ]; then
+  source "$HOME/dotfiles/work.sh"
+fi
 
 export PAGER=less
 
