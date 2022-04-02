@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Clone this repository into your `$HOME` directory:
-cd $HOME
+cd "$HOME" || exit
 git clone https://github.com/dijonkitchen/dotfiles/
 
 # Install [Homebrew](https://brew.sh/)
@@ -9,12 +9,12 @@ git clone https://github.com/dijonkitchen/dotfiles/
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 # To install all the brew packages from the
 # [Brewfile](https://github.com/Homebrew/homebrew-bundle),
-cd $HOME/dotfiles
+cd "$HOME"/dotfiles || exit
 brew bundle
 
 # In your `$HOME` directory,
 # symbolic link these files:
-cd $HOME
+cd "$HOME" || exit
 ln -s ./dotfiles/.zshrc
 ln -s ./dotfiles/.bash_profile
 ln -s ./dotfiles/.bashrc
