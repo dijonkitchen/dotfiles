@@ -10,7 +10,7 @@ git clone https://github.com/dijonkitchen/dotfiles/
 # To install all the brew packages from the
 # [Brewfile](https://github.com/Homebrew/homebrew-bundle),
 cd "$HOME"/dotfiles || exit
-brew bundle
+brew bundle --file=Brewfile
 
 # In your `$HOME` directory,
 # symbolic link these files:

@@ -5,11 +5,8 @@ tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "mongodb/brew"
-brew "git"
 brew "mysql@5.7", restart_service: true
 brew "redis", restart_service: true
 brew "elastic/tap/elasticsearch-full"
 brew "mongodb-community@4.0"
-cask "authy"
-cask "rectangle"
 cask "visual-studio-code"
