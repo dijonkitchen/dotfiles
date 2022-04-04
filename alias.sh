@@ -1,6 +1,6 @@
 #!/bin/bash
 
-alias ls='ls -GAlph'
+alias ls='ls -lAF --color'
 
 alias cd-='cd -'
 
