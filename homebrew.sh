@@ -1,18 +1,24 @@
 #!/bin/bash
 
-# TODO: potentially check for existing homebrew installation and warn user to add main user
-if [ -n "${HOMEBREW_MAIN_USER}" ]; then
-    echo "Using 'brew' as HOMEBREW_MAIN_USER: ${HOMEBREW_MAIN_USER}. Enter your password for single Homebrew use."
-    alias brew='sudo -Hiu $HOMEBREW_MAIN_USER brew'
-fi
+if ! type brew &>/dev/null ||
+    [ -e "/opt/homebrew" ] ||
+    [ -e "/usr/local/Homebrew" ] ||
+    [ -e "/home/linuxbrew/.linuxbrew" ] &&
+    [ -z "${HOMEBREW_MAIN_USER}" ];
+then
+    echo "Existing Homebrew installation detected."
+    echo "In $HOME/dotfiles/secrets.sh, set HOMEBREW_MAIN_USER=original-installer-username"
+else
+    if [ -n "${HOMEBREW_MAIN_USER}" ]; then
+        echo "Using 'brew' as HOMEBREW_MAIN_USER: ${HOMEBREW_MAIN_USER}. Enter your password for single Homebrew use."
+        alias brew='sudo -Hiu $HOMEBREW_MAIN_USER brew'
+    fi
 
-HOMEBREW_PREFIX="$(brew --prefix)"
+    HOMEBREW_PREFIX="$(brew --prefix)"
 
-# Path for brew binaries in multi-user mode
-export PATH="$HOMEBREW_PREFIX/bin:$HOMEBREW_PREFIX/sbin:~/bin:$PATH"
+    # Path for brew binaries in multi-user mode
+    export PATH="$HOMEBREW_PREFIX/bin:$HOMEBREW_PREFIX/sbin:~/bin:$PATH"
 
-
-if type brew &>/dev/null; then
     if [ -n "${BASH_VERSION}" ]; then
         # Heroku autocomplete setup
         HEROKU_AC_BASH_SETUP_PATH=$HOME/Library/Caches/heroku/autocomplete/bash_setup && test -f "$HEROKU_AC_BASH_SETUP_PATH" && source "$HEROKU_AC_BASH_SETUP_PATH";
