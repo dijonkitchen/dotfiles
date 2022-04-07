@@ -1,10 +1,12 @@
 #!/bin/bash
 
-if ! type brew &>/dev/null ||
-    [ -e "/opt/homebrew" ] ||
-    [ -e "/usr/local/Homebrew" ] ||
-    [ -e "/home/linuxbrew/.linuxbrew" ] &&
-    [ -z "${HOMEBREW_MAIN_USER}" ];
+if ! type brew &>/dev/null &&
+    {
+      [ -e "/opt/homebrew" ] ||
+      [ -e "/usr/local/Homebrew" ] ||
+      [ -e "/home/linuxbrew/.linuxbrew" ] &&
+      [ -z "${HOMEBREW_MAIN_USER}" ]
+    };
 then
     echo "Existing Homebrew installation detected."
     echo "In $HOME/dotfiles/secrets.sh, set HOMEBREW_MAIN_USER=original-installer-username"
