@@ -1,3 +1,3 @@
 #!/bin/bash
 
-alias ls='ls -laF --color'
+alias ls='ls -FlaG'
