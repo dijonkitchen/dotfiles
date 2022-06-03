@@ -7,8 +7,6 @@ SAVEHIST=1000
 bindkey -e
 # End of lines configured by zsh-newuser-install
 
-source "$HOME/dotfiles/settings.sh"
-
 # The following lines were added by compinstall
 zstyle :compinstall filename "$HOME/.zshrc"
 
@@ -25,3 +23,6 @@ else
     compinit
 fi
 # End of lines added by compinstall
+
+source "$HOME/dotfiles/settings.sh"
+
