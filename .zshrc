@@ -12,16 +12,7 @@ zstyle :compinstall filename "$HOME/.zshrc"
 
 autoload -Uz compinit
 
-if [ -n "${HOMEBREW_MAIN_USER}" ]; then
-    # FIXME: ignores security check for non-main homebrew user environment
-    # https://zsh.sourceforge.io/Doc/Release/Completion-System.html##Use-of-compinit
-    compinit -u
-    # run to show possible security issues since security check is ignored
-    compaudit
-else
-    # normal flow
-    compinit
-fi
+compinit
 # End of lines added by compinstall
 
 source "$HOME/dotfiles/settings.sh"
