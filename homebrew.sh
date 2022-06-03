@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ -e "$HOME/dotfiles/secrets.sh" ];
+then
+  source "$HOME/dotfiles/secrets.sh"
+fi
+
 if ! type brew &>/dev/null &&
     {
       [ -e "/opt/homebrew" ] ||
