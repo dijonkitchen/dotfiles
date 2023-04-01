@@ -1,7 +1,5 @@
 #!/bin/bash
 
-source "$HOME/dotfiles/python.sh"
-
 # MySQL
 export PATH="$HOMEBREW_PREFIX/opt/mysql@5.7/bin:$PATH"
 
