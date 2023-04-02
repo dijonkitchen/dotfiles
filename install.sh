@@ -1,15 +1,16 @@
 #!/bin/bash
 
-# Clone this repository into your `$HOME` directory:
-cd "$HOME" || exit
-git clone https://github.com/dijonkitchen/dotfiles/
-
 # Install Apple Developer Tools (git, etc.)
 xcode-select --install
 
 # Install [Homebrew](https://brew.sh/)
 # Skip this section if already installed by HOMEBREW_MAIN_USER
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Clone this repository into your `$HOME` directory:
+cd "$HOME" || exit
+git clone https://github.com/dijonkitchen/dotfiles/
+
 # To install all the brew packages from the
 # [Brewfile](https://github.com/Homebrew/homebrew-bundle),
 cd "$HOME"/dotfiles || exit
