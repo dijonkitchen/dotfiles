@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Install Apple Developer Tools (git, etc.)
 xcode-select --install
