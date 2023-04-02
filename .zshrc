@@ -9,10 +9,6 @@ bindkey -e
 
 # The following lines were added by compinstall
 zstyle :compinstall filename "$HOME/.zshrc"
-
-# Added to ensure Homebrew is installed
-source $HOME/dotfiles/homebrew.sh
-
 autoload -Uz compinit
 compinit -u
 # End of lines added by compinstall
