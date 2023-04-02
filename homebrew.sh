@@ -7,9 +7,9 @@ fi
 
 if ! type brew &>/dev/null &&
     {
-      [ -e "/opt/homebrew" ] ||
-      [ -e "/usr/local/Homebrew" ] ||
-      [ -e "/home/linuxbrew/.linuxbrew" ] &&
+      [ -e "/opt/homebrew" ] || # ARM
+      [ -e "/usr/local/Homebrew" ] || # x86
+      [ -e "/home/linuxbrew/.linuxbrew" ] && # Linux
       [ -z "${HOMEBREW_MAIN_USER}" ]
     };
 then
@@ -17,11 +17,23 @@ then
     echo "In $HOME/dotfiles/secrets.sh, set HOMEBREW_MAIN_USER=original-installer-username"
 else
     if [ -n "${HOMEBREW_MAIN_USER}" ]; then
-        echo "Using 'brew' as HOMEBREW_MAIN_USER: ${HOMEBREW_MAIN_USER}. Enter your password for single Homebrew use."
+        echo "Existing Homebrew with HOMEBREW_MAIN_USER: ${HOMEBREW_MAIN_USER}."
+        echo "Enter your current user password when requested for 'brew' use."
+
         alias brew='sudo -Hiu $HOMEBREW_MAIN_USER brew'
     fi
 
-    HOMEBREW_PREFIX="$(brew --prefix)"
+    # Uncomment your version
+
+    # ARM
+    HOMEBREW_PREFIX="/opt/homebrew"
+
+    # x86
+    # HOMEBREW_PREFIX="/usr/local/Homebrew"
+
+    # Linuxbrew
+    # HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew"
+
 
     # Path for brew binaries in multi-user mode
     export PATH="$HOMEBREW_PREFIX/bin:$HOMEBREW_PREFIX/sbin:~/bin:$PATH"
