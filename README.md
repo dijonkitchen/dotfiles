@@ -15,7 +15,7 @@ automatically used
 by GitHub Codespaces.
 
 ```sh
-curl https://raw.githubusercontent.com/dijonkitchen/dotfiles/master/install.sh | bash
+curl https://raw.githubusercontent.com/dijonkitchen/dotfiles/main/bootstrap.sh | bash
 nvm install --lts
 nvm alias default 'lts/*'
 ```
