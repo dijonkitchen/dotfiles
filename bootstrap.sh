@@ -20,8 +20,6 @@ brew bundle --file=Brewfile
 # symbolic link these files:
 cd "$HOME" || exit
 ln -s ./dotfiles/.zshrc
-ln -s ./dotfiles/.bash_profile
-ln -s ./dotfiles/.bashrc
 
 # Optionally link `.gitconfig`
 # or use your own credentials.
