@@ -31,11 +31,12 @@
     s = status
     a = add -A
     b = branch
+
     p = pull
     ph = push -u origin HEAD --tags
+
     d = diff
     dc = diff --cached
-    rebase = rebase
 
 [user]
 	name = Jonathan Chen
