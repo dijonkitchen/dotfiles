@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 if [ -e "$HOME/dotfiles/secrets.sh" ];
 then

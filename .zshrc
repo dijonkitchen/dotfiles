@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
