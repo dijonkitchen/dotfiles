@@ -8,6 +8,8 @@ if command -v nvm 1>/dev/null 2>&1; then
   # This loads nvm shell completions
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
+  # TODO: add bash version: https://github.com/nvm-sh/nvm#bash
+  # zsh version
   # place this after nvm initialization!
   autoload -U add-zsh-hook
   load-nvmrc() {
