@@ -16,7 +16,7 @@ then
     echo "Existing Homebrew installation detected."
     echo "In $HOME/dotfiles/secrets.sh, set HOMEBREW_MAIN_USER=original-installer-username"
 else
-    if [ -n "${HOMEBREW_MAIN_USER}" ]; then
+    if [ -n "${HOMEBREW_MAIN_USER}" ] && [ "${HOMEBREW_MAIN_USER}" != "${USER}" ]; then
         echo "Existing Homebrew with HOMEBREW_MAIN_USER: ${HOMEBREW_MAIN_USER}."
         echo "Enter your current user password when requested for 'brew' use."
 
