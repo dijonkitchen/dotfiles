@@ -2,6 +2,7 @@
 
 if [ -e "$HOME/dotfiles/secrets.sh" ];
 then
+  # shellcheck source=secrets.sh
   source "$HOME/dotfiles/secrets.sh"
 fi
 

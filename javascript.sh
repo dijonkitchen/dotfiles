@@ -2,10 +2,12 @@
 
 export NVM_DIR="$HOME/.nvm"
 
+# shellcheck source=/dev/null
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 if command -v nvm 1>/dev/null 2>&1; then
   # This loads nvm shell completions
+  # shellcheck source=/dev/null
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
   # place this after nvm initialization!
@@ -53,7 +55,7 @@ if command -v nvm 1>/dev/null 2>&1; then
         fi
     }
     alias cd='cdnvm'
-    cd "$PWD"
+    cd "$PWD" || exit
   elif [ -n "${ZSH_VERSION}" ]; then
     autoload -U add-zsh-hook
     load-nvmrc() {
