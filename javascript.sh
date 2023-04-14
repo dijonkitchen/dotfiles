@@ -55,8 +55,8 @@ if command -v nvm 1>/dev/null 2>&1; then
         fi
     }
 
-    cdnvm "$PWD" || exit
     alias cd='cdnvm'
+    cdnvm "$PWD" || exit
   elif [ -n "${ZSH_VERSION}" ]; then
     autoload -U add-zsh-hook
 
