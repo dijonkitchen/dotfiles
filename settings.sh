@@ -29,3 +29,5 @@ if [ -n "${WORKMODE}" ]; then
   # shellcheck source=work.sh
   source "$HOME/dotfiles/work.sh"
 fi
+
+export PATH="$HOME/Library/Application Support/JetBrains/Toolbox/scripts:$PATH"
