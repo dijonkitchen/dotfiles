@@ -13,7 +13,7 @@ alias g='git'
 source "/Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh"
 
 if [ -n "${BASH_VERSION}" ]; then
-    export PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND ;}'__git_ps1 "\[\e[1m\]\w\[\e[0m\]" "\\\$ "'
+    PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND ;}'__git_ps1 "\[\e[1m\]\w\[\e[0m\]" "\\\$ "'
 
     # autocomplete using alias
     source "/Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash"
