@@ -31,12 +31,11 @@
     s = status
     a = add -A
     b = branch
-
     p = pull
     ph = push -u origin HEAD --tags
-
     d = diff
     dc = diff --cached
+    rebase = rebase
 
 [user]
 	name = Jonathan Chen
@@ -54,3 +53,8 @@
 	conflictstyle = diff3
 [init]
 	defaultBranch = main
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
