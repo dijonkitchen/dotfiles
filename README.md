@@ -29,7 +29,7 @@ for latest settings.
 ### Manual setup
 
 Follow along
-comments in [./install.sh](./install.sh).
+comments in [./initialize.sh](./initialize.sh).
 
 Then,
 in a new terminal:
