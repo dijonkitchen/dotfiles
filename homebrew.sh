@@ -37,5 +37,5 @@ else
 
 
     # Path for brew binaries in multi-user mode
-    export PATH="$HOMEBREW_PREFIX/bin:$HOMEBREW_PREFIX/sbin:~/bin:$PATH"
+    export PATH="$HOMEBREW_PREFIX/bin:$HOMEBREW_PREFIX/sbin:$HOME/bin:$PATH"
 fi
