@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-alias ls='ls -FlaG'
+alias ls='ls -Fla --color=auto'
