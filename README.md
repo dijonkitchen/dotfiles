@@ -32,24 +32,10 @@ comments in [./initialize.sh](./initialize.sh).
 Then,
 open a new terminal.
 
-### Editor
+### IntelliJ
 
 You may need to add `/usr/local/bin`
 as [shell script path for IntelliJ](https://www.jetbrains.com/help/idea/working-with-the-ide-features-from-command-line.html#toolbox).
-
-
-## Typefaces
-
-The only other main setting
-is using any of my preferred typefaces:
-- [Jetbrains Mono](https://www.jetbrains.com/lp/mono/)
-- [Fira Code](https://github.com/tonsky/FiraCode)
-- [Input Mono](http://input.fontbureau.com)
-
-Just download any of them
-and add it to your Font book (on macOS).
-
-I use them with ligatures on.
 
 
 ## Backup brew packages
