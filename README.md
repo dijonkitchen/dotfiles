@@ -15,9 +15,7 @@ automatically used
 by GitHub Codespaces.
 
 ```sh
-curl https://raw.githubusercontent.com/dijonkitchen/dotfiles/main/bootstrap.sh | bash
-nvm install --lts
-nvm alias default 'lts/*'
+curl https://raw.githubusercontent.com/dijonkitchen/dotfiles/main/initialize.sh | bash
 ```
 
 Go through prompts,
@@ -32,11 +30,7 @@ Follow along
 comments in [./initialize.sh](./initialize.sh).
 
 Then,
-in a new terminal:
-```sh
-nvm install --lts
-nvm alias default 'lts/*'
-```
+open a new terminal.
 
 ### Editor
 
