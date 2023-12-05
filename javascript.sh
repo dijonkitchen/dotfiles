@@ -83,3 +83,7 @@ if command -v nvm 1>/dev/null 2>&1; then
     load-nvmrc
   fi
 fi
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH=$BUN_INSTALL/bin:$PATH

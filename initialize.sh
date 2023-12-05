@@ -7,8 +7,7 @@ xcode-select --install
 chsh -s "$(which bash)"
 
 # Install [Homebrew](https://brew.sh/)
-# Skip this section if already installed by HOMEBREW_MAIN_USER
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # Clone this repository into your `$HOME` directory:
 cd "$HOME" || exit
@@ -31,3 +30,8 @@ ln -s ./dotfiles/.gitconfig .
 
 # Install latest [nvm](https://github.com/nvm-sh/nvm) `master` branch install script
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
+export NVM_DIR="$HOME/.nvm"
+# shellcheck source=/dev/null
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+nvm install --lts
+nvm alias default 'lts/*'
