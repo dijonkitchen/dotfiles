@@ -27,7 +27,7 @@ ln -si ./dotfiles/.zshrc .
 
 # Optionally link `.gitconfig`
 # or use your own credentials.
-ln -s ./dotfiles/.gitconfig .
+ln -si ./dotfiles/.gitconfig .
 
 # Install latest [nvm](https://github.com/nvm-sh/nvm) `master` branch install script
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
