@@ -23,6 +23,7 @@ brew bundle --file=Brewfile
 cd "$HOME" || exit
 ln -si ./dotfiles/.bashrc .
 ln -si ./dotfiles/.bash_profile .
+ln -si ./dotfiles/.zshrc .
 
 # Optionally link `.gitconfig`
 # or use your own credentials.
