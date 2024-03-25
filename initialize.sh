@@ -23,15 +23,10 @@ brew bundle --file=Brewfile
 cd "$HOME" || exit
 ln -si ./dotfiles/.bashrc .
 ln -si ./dotfiles/.bash_profile .
+ln -si ./dotfiles/.zshrc .
 
 # Optionally link `.gitconfig`
 # or use your own credentials.
-ln -s ./dotfiles/.gitconfig .
+ln -si ./dotfiles/.gitconfig .
 
-# Install latest [nvm](https://github.com/nvm-sh/nvm) `master` branch install script
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
-export NVM_DIR="$HOME/.nvm"
-# shellcheck source=/dev/null
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-nvm install --lts
-nvm alias default 'lts/*'
+source .bashrc

@@ -41,20 +41,20 @@
 	name = JC (Jonathan Chen)
 	email = 11434205+dijonkitchen@users.noreply.github.com
 
-[commit]
-    template = ~/dotfiles/.gitmessage
+[init]
+	defaultBranch = main
 
 [fetch]
 	prune = true
 
-[pull]
-	ff = only
 [merge]
 	conflictstyle = diff3
-[init]
-	defaultBranch = main
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+
+[pull]
+	ff = only
+
+[commit]
+    template = ~/dotfiles/.gitmessage
+
+[submodule]
+    recurse = true

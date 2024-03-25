@@ -14,16 +14,16 @@ then
 fi
 
 # shellcheck source=javascript.sh
-source "$HOME/dotfiles/javascript.sh"
+# source "$HOME/dotfiles/javascript.sh"
 
 # shellcheck source=homebrew.sh
 source "$HOME/dotfiles/homebrew.sh"
 
 # Dependent on homebrew
 # shellcheck source=ruby.sh
-source "$HOME/dotfiles/ruby.sh"
+# source "$HOME/dotfiles/ruby.sh"
 # shellcheck source=python.sh
-source "$HOME/dotfiles/python.sh"
+# source "$HOME/dotfiles/python.sh"
 
 if [ -n "${WORKMODE}" ]; then
   # shellcheck source=work.sh
