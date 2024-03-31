@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-# Included in personal homebrew.sh
-# export PATH="/opt/homebrew/bin:$PATH"
+# shellcheck source=homebrew.sh
+source "$HOME/dotfiles/homebrew.sh"
 
 export SSL_CERT_FILE="/Library/Application Support/Netskope/STAgent/data/nscacert_combined.pem"
 export REQUESTS_CA_BUNDLE="/Library/Application Support/Netskope/STAgent/download/nscacert.pem"
