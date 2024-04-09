@@ -17,7 +17,7 @@ fi
 # source "$HOME/dotfiles/javascript.sh"
 
 # shellcheck source=homebrew.sh
-source "$HOME/dotfiles/homebrew.sh"
+# source "$HOME/dotfiles/homebrew.sh"
 
 # Dependent on homebrew
 # shellcheck source=ruby.sh

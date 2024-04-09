@@ -1,0 +1,4 @@
+[tools]
+python = 'latest'
+ruby = 'latest'
+node = 'lts'
