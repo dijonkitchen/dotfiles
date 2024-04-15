@@ -4,7 +4,7 @@
 xcode-select --install
 
 # Change shell to default to bash
-chsh -s "$(which bash)"
+# chsh -s "$(which bash)"
 
 # Install [Homebrew](https://brew.sh/)
 # bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
