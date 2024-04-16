@@ -1,4 +1,7 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
+
+# Uncomment for profiling start of run commands. Run `zprof` to see the results
+# zmodload zsh/zprof
 
 # Rust initialization for Ruby YJIT
 . "$HOME/.cargo/env"
