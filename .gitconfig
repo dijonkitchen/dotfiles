@@ -1,7 +1,7 @@
 [core]
     # Excludesfiles allows us to set a global list of things to ignore
     excludesfile = ~/dotfiles/.gitignore_global
-    editor = vim
+    editor = vi
     ignorecase = false
 
 # These are custom color options for the console
