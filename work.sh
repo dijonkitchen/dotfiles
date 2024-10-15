@@ -21,3 +21,5 @@ export PIP_CERT=${CERT_PATH}
 export HTTPLIB2_CA_CERTS=${CERT_PATH}
 export SSL_CERT_FILE="${CERT_PATH}"
 export GAM_CA_FILE=${CERT_PATH}
+
+export KUBECONFIG=$HOME/.kube/sh-demo-tenant-demo-kubeconfig.yaml
