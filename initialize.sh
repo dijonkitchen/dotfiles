@@ -40,3 +40,4 @@ mkdir -p ~/.config/mise && cp config.toml ~/.config/mise/config.toml
 mise install
 
 source .bashrc
+source .zshrc
