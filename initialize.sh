@@ -35,8 +35,9 @@ curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
 # mise for language version management
 curl https://mise.run | sh
 ~/.local/bin/mise --version
-cd "$HOME/dotfiles" || exit
-mkdir -p ~/.config/mise && cp config.toml ~/.config/mise/config.toml
+mkdir -p "$HOME/.config/mise"
+cd "$HOME/.config/mise" || exit
+ln -si ../../dotfiles/config.toml .
 mise install
 
 source .bashrc
