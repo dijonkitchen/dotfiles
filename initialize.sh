@@ -7,7 +7,7 @@ xcode-select --install
 # chsh -s "$(which bash)"
 
 # Install [Homebrew](https://brew.sh/)
-# bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # Clone this repository into your `$HOME` directory:
 cd "$HOME" || exit
@@ -15,8 +15,8 @@ git clone https://github.com/dijonkitchen/dotfiles/
 
 # To install all the brew packages from the
 # [Brewfile](https://github.com/Homebrew/homebrew-bundle),
-# cd "$HOME"/dotfiles || exit
-# brew bundle --file=Brewfile
+cd "$HOME"/dotfiles || exit
+brew bundle --file=Brewfile
 
 # In your `$HOME` directory,
 # symbolic link these files:
@@ -35,8 +35,10 @@ curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
 # mise for language version management
 curl https://mise.run | sh
 ~/.local/bin/mise --version
-cd "$HOME/dotfiles" || exit
-mkdir -p ~/.config/mise && cp config.toml ~/.config/mise/config.toml
+mkdir -p "$HOME/.config/mise"
+cd "$HOME/.config/mise" || exit
+ln -si ../../dotfiles/config.toml .
 mise install
 
 source .bashrc
+source .zshrc

@@ -50,7 +50,7 @@
 	conflictstyle = diff3
 
 [rebase]
-    	updateRefs = true
+    updateRefs = true
 
 [pull]
 	ff = only

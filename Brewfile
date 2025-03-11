@@ -1,7 +1,6 @@
 tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "homebrew/core"
-cask "authy"
-cask "docker"
-cask "obsidian"
-cask "visual-studio-code"
+# For Ruby
+brew "libyaml"
+# For Python and Conda
+brew "pipx"
+cask "miniforge"
