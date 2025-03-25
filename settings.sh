@@ -22,7 +22,7 @@ source "$HOME/dotfiles/homebrew.sh"
 # shellcheck source=ruby.sh
 source "$HOME/dotfiles/ruby.sh"
 # shellcheck source=python.sh
-# source "$HOME/dotfiles/python.sh"
+source "$HOME/dotfiles/python.sh"
 
 if [ -n "${WORKMODE}" ]; then
   # shellcheck source=work.sh

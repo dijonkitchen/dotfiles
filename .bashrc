@@ -6,3 +6,5 @@ eval "$(~/.local/bin/mise activate bash)"
 
 # shellcheck source=settings.sh
 source "$HOME/dotfiles/settings.sh"
+
+# Add new items below to proper file for organization
