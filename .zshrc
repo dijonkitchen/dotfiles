@@ -8,4 +8,4 @@ eval "$(~/.local/bin/mise activate zsh)"
 # shellcheck source=settings.sh
 source "$HOME/dotfiles/settings.sh"
 
-# Add new items below to proper file for organization
+# Add new items below to proper files for organization
