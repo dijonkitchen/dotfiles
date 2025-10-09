@@ -1,5 +1,7 @@
 
-# 50-character title on what changed
+# 50-character title on what changed,
+# with conventional commit prefix
+# (feat:, fix:, docs:, refactor:, build:, perf:, style:, etc.)
 #
 # 72-character wrapped longer description
 # Why:

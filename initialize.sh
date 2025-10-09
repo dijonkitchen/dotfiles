@@ -29,12 +29,7 @@ ln -si ./dotfiles/.zshrc .
 # or use your own credentials.
 ln -si ./dotfiles/.gitconfig .
 
-# Rust installation for Ruby YJIT
-curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
-
 # mise for language version management
-curl https://mise.run | sh
-~/.local/bin/mise --version
 mkdir -p "$HOME/.config/mise"
 cd "$HOME/.config/mise" || exit
 ln -si ../../dotfiles/config.toml .
