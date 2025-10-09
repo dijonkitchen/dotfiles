@@ -1,3 +1,4 @@
+brew "libyaml" # for Ruby
 brew "mise"
 brew "uv"
 vscode "altimateai.vscode-altimate-mcp-server"
