@@ -1,5 +1,4 @@
 # For mise
 [tools]
-python = '3.11'
 ruby = 'latest'
 node = 'lts'

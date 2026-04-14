@@ -4,19 +4,10 @@
     editor = vi
     ignorecase = false
 
-# These are custom color options for the console
-[color]
-    status = auto
-    diff = auto
-
-[color "status"]
-    untracked = cyan
-    changed = green
-    added = yellow
 
 # Aliases are command shortcuts
 [alias]
-    co = checkout
+    sw = switch
 
     # lg is now a shortcut for a pretty log with short commit messages
     # See the log manpage: https://www.kernel.org/pub/software/scm/git/docs/git-log.html
@@ -33,30 +24,19 @@
     b = branch
     p = pull
     ph = push -u origin HEAD --tags
-    d = diff
-    dc = diff --cached
+    d = diff --diff-algorithm=histogram
+    dc = diff --cached --diff-algorithm=histogram
 
 [user]
 	name = JC (Jonathan Chen)
 	email = 11434205+dijonkitchen@users.noreply.github.com
 
-[init]
-	defaultBranch = main
-
-[fetch]
-	prune = true
-
 [merge]
-	conflictstyle = diff3
-
-[rebase]
-    updateRefs = true
-
-[pull]
-	ff = only
+	conflictstyle = zdiff3
 
 [commit]
     template = ~/dotfiles/.gitmessage
 
-[submodule]
-    recurse = true
+# TODO: remove when git 3, since main will be default
+[init]
+	defaultBranch = main
