@@ -31,6 +31,7 @@ link_skills_into() {
 mkdir -p "$HOME/.claude"
 ln $LN_OPTS "$SCRIPT_DIR/.claude/settings.json"        "$HOME/.claude/settings.json"
 ln $LN_OPTS "$SCRIPT_DIR/.claude/statusline-command.sh" "$HOME/.claude/statusline-command.sh"
+ln $LN_OPTS "$SCRIPT_DIR/.claude/CLAUDE.md"             "$HOME/.claude/CLAUDE.md"
 link_skills_into "$HOME/.claude/skills"
 
 # --- Future adapters -------------------------------------------------------
