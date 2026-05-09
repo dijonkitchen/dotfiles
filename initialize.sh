@@ -1,22 +1,28 @@
 #!/usr/bin/env bash
 
-# Install Apple Developer Tools (git, etc.)
-xcode-select --install
+is_macos() { [[ "$OSTYPE" == "darwin"* ]]; }
 
-# Change shell to default to bash
-# chsh -s "$(which bash)"
+if is_macos; then
+  # Install Apple Developer Tools (git, etc.)
+  xcode-select --install
 
-# Install [Homebrew](https://brew.sh/)
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  # Change shell to default to bash
+  # chsh -s "$(which bash)"
+
+  # Install [Homebrew](https://brew.sh/)
+  bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
 
 # Clone this repository into your `$HOME` directory:
 cd "$HOME" || exit
 git clone https://github.com/dijonkitchen/dotfiles/
 
-# To install all the brew packages from the
-# [Brewfile](https://github.com/Homebrew/homebrew-bundle),
-cd "$HOME"/dotfiles || exit
-brew bundle --file=Brewfile
+if is_macos; then
+  # To install all the brew packages from the
+  # [Brewfile](https://github.com/Homebrew/homebrew-bundle),
+  cd "$HOME"/dotfiles || exit
+  brew bundle --file=Brewfile
+fi
 
 # In your `$HOME` directory,
 # symbolic link these files:
@@ -29,11 +35,18 @@ ln -si ./dotfiles/.zshrc .
 # or use your own credentials.
 ln -si ./dotfiles/.gitconfig .
 
-# mise for language version management
-mkdir -p "$HOME/.config/mise"
-cd "$HOME/.config/mise" || exit
-ln -si ../../dotfiles/config.toml .
-mise install
+# Claude Code settings
+mkdir -p "$HOME/.claude"
+ln -si "$HOME/dotfiles/.claude/settings.json" "$HOME/.claude/settings.json"
+ln -si "$HOME/dotfiles/.claude/statusline-command.sh" "$HOME/.claude/statusline-command.sh"
 
-source .bashrc
-source .zshrc
+# mise for language version management (skip if not installed)
+if command -v mise >/dev/null 2>&1; then
+  mkdir -p "$HOME/.config/mise"
+  cd "$HOME/.config/mise" || exit
+  ln -si ../../dotfiles/config.toml .
+  mise install
+fi
+
+source "$HOME/.bashrc"
+source "$HOME/.zshrc"
