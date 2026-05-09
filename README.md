@@ -13,25 +13,25 @@ AI skills. Feel free to review/improve/fork!
 | `Brewfile`, `config.toml`        | Package and language version pins (Homebrew, mise)          |
 | `.agent/skills/`                 | AI skills (git subtree of `dijonkitchen/skills`)            |
 | `.claude/`                       | Claude Code-specific settings and statusline                |
-| `initialize.sh`                  | Manual setup entry point (macOS / Linux)                    |
-| `bootstrap.sh`                   | Codespaces auto-run hook (delegates to `initialize.sh`)     |
+| `bootstrap.sh`                   | Single setup entry point (Codespaces auto-runs it; also for manual macOS / Linux) |
 | `link-agents.sh`                 | Symlinks agent-agnostic skills into per-agent install paths |
 
-`initialize.sh` detects whether it is running in Codespaces, macOS, or
+`bootstrap.sh` detects whether it is running in Codespaces, macOS, or
 plain Linux and picks the correct dotfiles location, link mode, and
-package manager steps. Codespaces invokes `bootstrap.sh` automatically.
+package manager steps. Codespaces invokes it automatically on container
+creation.
 
 ## Setup
 
 ```sh
-curl https://raw.githubusercontent.com/dijonkitchen/dotfiles/main/initialize.sh | bash
+curl https://raw.githubusercontent.com/dijonkitchen/dotfiles/main/bootstrap.sh | bash
 ```
 
 Go through prompts, if any. Open a new terminal for latest settings.
 
 ### Manual setup
 
-Follow along comments in [./initialize.sh](./initialize.sh). Then open a
+Follow along comments in [./bootstrap.sh](./bootstrap.sh). Then open a
 new terminal.
 
 ## AI agents
