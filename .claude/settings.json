@@ -1,0 +1,16 @@
+{
+  "model": "opus[1m]",
+  "statusLine": {
+    "type": "command",
+    "command": "bash ~/.claude/statusline-command.sh"
+  },
+  "editorMode": "vim",
+  "verbose": true,
+  "skipAutoPermissionPrompt": true,
+  "permissions": {
+    "defaultMode": "auto",
+    "allow": [
+      "mcp__atlassian__getJiraIssue"
+    ]
+  }
+}

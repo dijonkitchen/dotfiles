@@ -29,6 +29,11 @@ ln -si ./dotfiles/.zshrc .
 # or use your own credentials.
 ln -si ./dotfiles/.gitconfig .
 
+# Claude Code settings
+mkdir -p "$HOME/.claude"
+ln -si "$HOME/dotfiles/.claude/settings.json" "$HOME/.claude/settings.json"
+ln -si "$HOME/dotfiles/.claude/statusline-command.sh" "$HOME/.claude/statusline-command.sh"
+
 # mise for language version management
 mkdir -p "$HOME/.config/mise"
 cd "$HOME/.config/mise" || exit
