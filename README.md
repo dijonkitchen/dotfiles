@@ -11,7 +11,7 @@ AI skills. Feel free to review/improve/fork!
 | `.bashrc`, `.zshrc`, `alias.sh`  | Shell config and aliases                                    |
 | `.gitconfig`, `.gitmessage`      | Git config                                                  |
 | `Brewfile`, `config.toml`        | Package and language version pins (Homebrew, mise)          |
-| `.agent/skills-source/`          | AI skills repo (git subtree of `dijonkitchen/skills`)       |
+| `.agent/skills/`                 | AI skills (git subtree of `dijonkitchen/skills`)            |
 | `.claude/`                       | Claude Code-specific settings and statusline                |
 | `initialize.sh`                  | Manual setup entry point (macOS / Linux)                    |
 | `bootstrap.sh`                   | Codespaces auto-run hook (delegates to `initialize.sh`)     |
@@ -36,9 +36,9 @@ new terminal.
 
 ## AI agents
 
-Skills live under `.agent/skills-source/.agent/skills/<name>/` (the
-embedded `dijonkitchen/skills` repo). `link-agents.sh` exposes them to
-each installed AI coding agent via symlink:
+Skills live under `.agent/skills/<name>/` (git subtree of
+`dijonkitchen/skills`). `link-agents.sh` exposes them to each installed
+AI coding agent via symlink:
 
 - **Claude Code** — linked into `~/.claude/skills/` automatically.
 - **Cursor / Codex / others** — opt-in adapter blocks in
@@ -47,7 +47,7 @@ each installed AI coding agent via symlink:
 To pull skills updates from upstream:
 
 ```sh
-git subtree pull --prefix=.agent/skills-source \
+git subtree pull --prefix=.agent/skills \
   https://github.com/dijonkitchen/skills.git main --squash
 ```
 

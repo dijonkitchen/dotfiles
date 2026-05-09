@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Link agent-agnostic content (.agent/skills-source) and per-agent runtime
+# Link agent-agnostic content (.agent/skills) and per-agent runtime
 # configs into the locations each AI coding agent expects.
 #
 # Add a new agent by appending a block below. The canonical content lives in
@@ -7,7 +7,7 @@
 set -eu
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-SKILLS_DIR="$SCRIPT_DIR/.agent/skills-source/.agent/skills"
+SKILLS_DIR="$SCRIPT_DIR/.agent/skills"
 
 is_codespaces() { [[ "${CODESPACES:-}" == "true" ]] || [[ -d /workspaces/.codespaces ]]; }
 if is_codespaces; then LN_OPTS="-sf"; else LN_OPTS="-si"; fi
