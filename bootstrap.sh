@@ -33,14 +33,13 @@ if is_macos; then
   brew bundle --file="$DOTFILES_DIR/Brewfile"
 fi
 
-# Shell + git config (Codespaces bash/zsh files exist; append our aliases)
+# Shell + git config. Codespaces ships its own .bashrc/.zshrc that we
+# don't want to clobber, so we append a single source line pointing at
+# our canonical alias file. Locally we symlink the full rc files.
 if is_codespaces; then
-  echo 'alias ls="ls -la --color=auto"' >> ~/.bashrc
-  echo 'alias g="git"'                   >> ~/.bashrc
-  echo 'alias be="bundle exec"'          >> ~/.bashrc
-  echo 'alias ls="ls -la --color=auto"' >> ~/.zshrc
-  echo 'alias g="git"'                   >> ~/.zshrc
-  echo 'alias be="bundle exec"'          >> ~/.zshrc
+  source_line="source \"$DOTFILES_DIR/alias.sh\""
+  grep -qxF "$source_line" ~/.bashrc 2>/dev/null || echo "$source_line" >> ~/.bashrc
+  grep -qxF "$source_line" ~/.zshrc  2>/dev/null || echo "$source_line" >> ~/.zshrc
 else
   ln $LN_OPTS "$DOTFILES_DIR/.bashrc"       "$HOME/.bashrc"
   ln $LN_OPTS "$DOTFILES_DIR/.bash_profile" "$HOME/.bash_profile"
