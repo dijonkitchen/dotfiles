@@ -9,36 +9,9 @@ permissions:
   contents: read
 
 jobs:
-  shellcheck:
+  check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Run shellcheck on all shell scripts
-        run: |
-          shellcheck --severity=warning \
-            bootstrap.sh \
-            link-agents.sh \
-            alias.sh \
-            git.sh \
-            settings.sh \
-            homebrew.sh \
-            python.sh \
-            ruby.sh \
-            .claude/statusline-command.sh
-
-  json:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Validate JSON files
-        run: |
-          jq empty .claude/settings.json
-
-  bats:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Install bats
-        run: sudo apt-get update && sudo apt-get install -y bats
-      - name: Run bats tests
-        run: bats tests/
+      - run: make test-deps
+      - run: make check
