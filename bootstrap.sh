@@ -22,7 +22,9 @@ fi
 
 if is_macos; then
   xcode-select --install || true
-  bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  if ! command -v brew >/dev/null 2>&1; then
+    bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  fi
 fi
 
 if ! is_codespaces && [[ ! -d "$DOTFILES_DIR" ]]; then
