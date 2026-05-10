@@ -33,3 +33,12 @@ jobs:
       - name: Validate JSON files
         run: |
           jq empty .claude/settings.json
+
+  bats:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install bats
+        run: sudo apt-get update && sudo apt-get install -y bats
+      - name: Run bats tests
+        run: bats tests/
