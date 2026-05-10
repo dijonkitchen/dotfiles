@@ -5,9 +5,12 @@ is_macos()       { [[ "${OSTYPE:-}" == "darwin"* ]]; }
 is_codespaces()  { [[ "${CODESPACES:-}" == "true" ]] || [[ -d /workspaces/.codespaces ]]; }
 
 # Resolve where the dotfiles repo lives in this environment.
+# - Caller may pre-set DOTFILES_DIR (used by tests).
 # - Codespaces mounts user dotfiles at /workspaces/.codespaces/.persistedshare/dotfiles
 # - macOS / Linux: clone (or already cloned) at $HOME/dotfiles
-if is_codespaces; then
+if [[ -n "${DOTFILES_DIR:-}" ]]; then
+  :
+elif is_codespaces; then
   DOTFILES_DIR="/workspaces/.codespaces/.persistedshare/dotfiles"
 else
   DOTFILES_DIR="$HOME/dotfiles"
