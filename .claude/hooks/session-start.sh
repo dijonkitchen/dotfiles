@@ -10,6 +10,10 @@ if [ "${CLAUDE_CODE_REMOTE:-}" != "true" ]; then
   exit 0
 fi
 
+# Run the install in the background so the session can start while apt
+# works. 5 min cap matches the apt + index fetch worst case.
+echo '{"async": true, "asyncTimeout": 300000}'
+
 # `make test-deps` runs apt-get update, which can fail on the web image
 # due to unrelated third-party PPAs. Install directly, restricting
 # update to Ubuntu's own sources so a broken PPA does not break us.
