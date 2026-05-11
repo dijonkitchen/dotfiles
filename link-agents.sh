@@ -10,7 +10,10 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SKILLS_DIR="$SCRIPT_DIR/.agent/skills"
 
 is_codespaces() { [[ "${CODESPACES:-}" == "true" ]] || [[ -d /workspaces/.codespaces ]]; }
-if is_codespaces; then LN_OPTS="-sf"; else LN_OPTS="-si"; fi
+# `-n` (--no-dereference) keeps `ln` from following an existing symlink to a
+# directory and creating a nested symlink inside it on re-run. Both GNU and
+# BSD `ln` accept `-n`.
+if is_codespaces; then LN_OPTS="-sfn"; else LN_OPTS="-sin"; fi
 
 link_skills_into() {
   local target_dir="$1"
