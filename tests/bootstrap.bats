@@ -18,9 +18,8 @@ teardown() {
 }
 
 run_bootstrap() {
-  # Run bootstrap inside the sandbox. We deliberately do NOT 'source'
-  # it because it ends with `source ~/.bashrc`, which would pollute
-  # the bats process. Forking a subshell isolates state.
+  # Fork a subshell so the script's environment changes don't leak into
+  # the bats process.
   bash "$SANDBOX_REPO/bootstrap.sh"
 }
 

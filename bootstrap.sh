@@ -62,7 +62,3 @@ if command -v mise >/dev/null 2>&1; then
   ln $LN_OPTS "$DOTFILES_DIR/config.toml" "$HOME/.config/mise/config.toml"
   mise install
 fi
-
-# Reload shells (only meaningful when run interactively).
-[[ -f "$HOME/.bashrc" ]] && source "$HOME/.bashrc" || true
-[[ -f "$HOME/.zshrc"  ]] && source "$HOME/.zshrc"  || true
