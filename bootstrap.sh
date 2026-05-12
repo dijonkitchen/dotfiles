@@ -62,3 +62,6 @@ if command -v mise >/dev/null 2>&1; then
   ln $LN_OPTS "$DOTFILES_DIR/config.toml" "$HOME/.config/mise/config.toml"
   mise install
 fi
+
+echo
+echo "Done. Run 'source ~/.bashrc' (bash) or 'source ~/.zshrc' (zsh) to apply now, or open a new terminal."
