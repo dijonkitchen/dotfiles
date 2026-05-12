@@ -53,3 +53,20 @@ teardown() {
 
   [ "$first" = "$second" ]
 }
+
+@test "Claude Code on the web runs non-interactively (CLAUDE_CODE_REMOTE)" {
+  # Drop the Codespaces fingerprint set in setup() so the Claude Code web
+  # branch is the only thing keeping us out of interactive `ln -i` mode.
+  unset CODESPACES
+  export CLAUDE_CODE_REMOTE=true
+
+  # Pre-create a conflicting target. Interactive ln would block on stdin
+  # and hang the test; force mode overwrites without prompting.
+  mkdir -p "$HOME/.claude"
+  echo "stale" > "$HOME/.claude/CLAUDE.md"
+
+  run "$SANDBOX_REPO/link-agents.sh" </dev/null
+  [ "$status" -eq 0 ]
+  [ -L "$HOME/.claude/CLAUDE.md" ]
+  [ "$(readlink "$HOME/.claude/CLAUDE.md")" = "$SANDBOX_REPO/.claude/CLAUDE.md" ]
+}

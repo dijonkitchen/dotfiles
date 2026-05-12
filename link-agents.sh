@@ -9,11 +9,12 @@ set -eu
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SKILLS_DIR="$SCRIPT_DIR/.agent/skills"
 
-is_codespaces() { [[ "${CODESPACES:-}" == "true" ]] || [[ -d /workspaces/.codespaces ]]; }
+is_codespaces()   { [[ "${CODESPACES:-}" == "true" ]] || [[ -d /workspaces/.codespaces ]]; }
+is_claude_remote() { [[ "${CLAUDE_CODE_REMOTE:-}" == "true" ]]; }
 # `-n` (--no-dereference) keeps `ln` from following an existing symlink to a
 # directory and creating a nested symlink inside it on re-run. Both GNU and
 # BSD `ln` accept `-n`.
-if is_codespaces; then LN_OPTS="-sfn"; else LN_OPTS="-sin"; fi
+if is_codespaces || is_claude_remote; then LN_OPTS="-sfn"; else LN_OPTS="-sin"; fi
 
 link_skills_into() {
   local target_dir="$1"
