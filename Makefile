@@ -10,7 +10,8 @@ SH_FILES := \
 	homebrew.sh \
 	python.sh \
 	ruby.sh \
-	.claude/statusline-command.sh
+	.claude/statusline-command.sh \
+	.claude/hooks/session-start.sh
 
 .PHONY: help test-deps lint test check
 

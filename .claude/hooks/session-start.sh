@@ -1,18 +1,24 @@
 #!/usr/bin/env bash
 # Claude Code SessionStart hook.
-# Installs deps that `make check` needs (bats, shellcheck, jq) so the
-# agent can run tests and linters from the start of the session. Only
-# runs on Claude Code on the web; local machines manage their own deps
-# via dotfiles bootstrap.
+# On Claude Code on the web (where the user's local ~/.claude/ is not
+# available), materialize this repo's .claude/ globals into ~/.claude/
+# via link-agents.sh, then install the deps that `make check` needs
+# (bats, shellcheck, jq) so the agent can run tests and linters from
+# the start of the session. Local machines manage both via bootstrap.
 set -euo pipefail
 
 if [ "${CLAUDE_CODE_REMOTE:-}" != "true" ]; then
   exit 0
 fi
 
-# Run the install in the background so the session can start while apt
-# works. 5 min cap matches the apt + index fetch worst case.
+# Run in the background so the session can start while apt works. 5 min
+# cap matches the apt + index fetch worst case.
 echo '{"async": true, "asyncTimeout": 300000}'
+
+# Symlink the dotfiles' .claude/ (statusline, CLAUDE.md, skills, the
+# settings.json with this very hook) into ~/.claude/ so they apply at
+# the user scope, not just the project scope. Idempotent.
+"$CLAUDE_PROJECT_DIR/link-agents.sh"
 
 # `make test-deps` runs apt-get update, which can fail on the web image
 # due to unrelated third-party PPAs. Install directly, restricting
