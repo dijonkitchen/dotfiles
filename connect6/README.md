@@ -31,8 +31,27 @@ Or just open `connect6/index.html` directly in a browser.
   (column `I` is skipped, Go-style).
 - Toggleable board coordinates and last-move highlight.
 
+## Tests
+
+The pure rules live in `engine.js` and are exercised by `tests/engine.test.mjs`
+using Node's built-in test runner (no dependencies). Run from the repo root:
+
+```sh
+make test-connect6
+# or directly:
+node --test 'connect6/tests/*.test.mjs'
+```
+
+Tests cover: turn progression (Black opens with 1, then 2 per turn),
+out-of-bounds and occupied-cell rejection, win detection across all four
+directions, the 5-not-6 negative case, post-win move rejection, undo across
+turn boundaries, the column-`I`-skipping coordinate labels, and a full
+deterministic mini-game on a 6×6 board.
+
 ## Files
 
 - `index.html` — markup and layout
 - `styles.css` — dark theme, responsive layout
-- `game.js` — game state, rules, rendering on `<canvas>`
+- `engine.js` — pure rules (UMD-loadable in browser and Node)
+- `game.js` — UI layer: canvas rendering, event handlers, status panel
+- `tests/engine.test.mjs` — unit tests for the rules engine
