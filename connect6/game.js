@@ -1,15 +1,9 @@
 (() => {
   "use strict";
 
-  const BLACK = 1;
-  const WHITE = 2;
-  const WIN_LEN = 6;
-  const DIRECTIONS = [
-    [1, 0],
-    [0, 1],
-    [1, 1],
-    [1, -1],
-  ];
+  const E = window.Connect6Engine;
+  const { BLACK, WHITE, createGame, place, undo, columnLabel, moveLabel,
+    stonesForTurn, currentPlayer, stonesLeft, lastTurnMoves } = E;
 
   const canvas = document.getElementById("board");
   const ctx = canvas.getContext("2d");
@@ -25,125 +19,16 @@
   const historyEl = document.getElementById("history");
   const banner = document.getElementById("banner");
 
-  const state = {
-    size: 19,
-    board: [],
-    history: [],
-    turnIndex: 0,
-    stonesPlacedThisTurn: 0,
-    winner: 0,
-    winLine: null,
-  };
-
-  function stonesForTurn(turnIndex) {
-    return turnIndex === 0 ? 1 : 2;
-  }
-
-  function playerForTurn(turnIndex) {
-    return turnIndex % 2 === 0 ? BLACK : WHITE;
-  }
+  let state = createGame(19);
 
   function playerName(p) {
     return p === BLACK ? "Black" : "White";
   }
 
-  function columnLabel(c) {
-    const skipI = c >= 8 ? c + 1 : c;
-    return String.fromCharCode("A".charCodeAt(0) + skipI);
-  }
-
-  function moveLabel(c, r) {
-    return `${columnLabel(c)}${state.size - r}`;
-  }
-
   function resetGame(size) {
-    state.size = size;
-    state.board = Array.from({ length: size }, () => new Array(size).fill(0));
-    state.history = [];
-    state.turnIndex = 0;
-    state.stonesPlacedThisTurn = 0;
-    state.winner = 0;
-    state.winLine = null;
+    state = createGame(size);
     banner.hidden = true;
     renderAll();
-  }
-
-  function currentPlayer() {
-    return playerForTurn(state.turnIndex);
-  }
-
-  function stonesLeftThisTurn() {
-    return stonesForTurn(state.turnIndex) - state.stonesPlacedThisTurn;
-  }
-
-  function inBounds(c, r) {
-    return c >= 0 && r >= 0 && c < state.size && r < state.size;
-  }
-
-  function place(c, r) {
-    if (state.winner || !inBounds(c, r)) return;
-    if (state.board[r][c] !== 0) return;
-
-    const player = currentPlayer();
-    state.board[r][c] = player;
-    state.history.push({ c, r, player, turnIndex: state.turnIndex });
-    state.stonesPlacedThisTurn += 1;
-
-    const win = findWinFrom(c, r, player);
-    if (win) {
-      state.winner = player;
-      state.winLine = win;
-      renderAll();
-      showBanner(`${playerName(player)} wins!`);
-      return;
-    }
-
-    if (state.stonesPlacedThisTurn >= stonesForTurn(state.turnIndex)) {
-      state.turnIndex += 1;
-      state.stonesPlacedThisTurn = 0;
-    }
-    renderAll();
-  }
-
-  function undo() {
-    if (state.history.length === 0) return;
-    const last = state.history.pop();
-    state.board[last.r][last.c] = 0;
-    state.turnIndex = last.turnIndex;
-    state.stonesPlacedThisTurn = state.history.filter(
-      (m) => m.turnIndex === state.turnIndex,
-    ).length;
-    state.winner = 0;
-    state.winLine = null;
-    banner.hidden = true;
-    renderAll();
-  }
-
-  function findWinFrom(c, r, player) {
-    for (const [dc, dr] of DIRECTIONS) {
-      const line = [{ c, r }];
-      let cc = c + dc;
-      let rr = r + dr;
-      while (inBounds(cc, rr) && state.board[rr][cc] === player) {
-        line.push({ c: cc, r: rr });
-        cc += dc;
-        rr += dr;
-      }
-      cc = c - dc;
-      rr = r - dr;
-      while (inBounds(cc, rr) && state.board[rr][cc] === player) {
-        line.unshift({ c: cc, r: rr });
-        cc -= dc;
-        rr -= dr;
-      }
-      if (line.length >= WIN_LEN) return line;
-    }
-    return null;
-  }
-
-  function showBanner(text) {
-    banner.textContent = text;
-    banner.hidden = false;
   }
 
   function geometry() {
@@ -162,7 +47,7 @@
     const { margin, step } = geometry();
     const c = Math.round((x - margin) / step);
     const r = Math.round((y - margin) / step);
-    if (!inBounds(c, r)) return null;
+    if (c < 0 || r < 0 || c >= state.size || r >= state.size) return null;
     const cx = margin + c * step;
     const cy = margin + r * step;
     if (Math.hypot(x - cx, y - cy) > step * 0.5) return null;
@@ -177,16 +62,21 @@
       return [3, 7, 11].flatMap((r) => [3, 7, 11].map((c) => [c, r]));
     }
     if (state.size === 13) {
-      const m = 6;
       return [
         [3, 3],
         [9, 3],
         [3, 9],
         [9, 9],
-        [m, m],
+        [6, 6],
       ];
     }
     return [];
+  }
+
+  function getCss(name) {
+    return getComputedStyle(document.documentElement)
+      .getPropertyValue(name)
+      .trim();
   }
 
   function drawBoard() {
@@ -288,7 +178,7 @@
   }
 
   function drawStones() {
-    const lastMoves = lastTurnMoves();
+    const lastMoves = lastTurnMoves(state);
     const winSet = new Set(
       (state.winLine || []).map(({ c, r }) => `${c},${r}`),
     );
@@ -309,23 +199,14 @@
     }
   }
 
-  function lastTurnMoves() {
-    if (state.history.length === 0) return [];
-    if (state.stonesPlacedThisTurn > 0) {
-      return state.history.slice(-state.stonesPlacedThisTurn);
-    }
-    const prevTurn = state.history[state.history.length - 1].turnIndex;
-    return state.history.filter((m) => m.turnIndex === prevTurn);
-  }
-
   function renderStatus() {
     if (state.winner) {
       turnText.textContent = `${playerName(state.winner)} wins`;
       turnDot.classList.toggle("white", state.winner === WHITE);
       stonesLeftEl.textContent = "0";
     } else {
-      const p = currentPlayer();
-      const left = stonesLeftThisTurn();
+      const p = currentPlayer(state);
+      const left = stonesLeft(state);
       const count = stonesForTurn(state.turnIndex);
       const verb =
         state.stonesPlacedThisTurn === 0
@@ -353,7 +234,7 @@
       li.className = moves[0].player === BLACK ? "black" : "white";
       const label = moves[0].player === BLACK ? "B" : "W";
       li.textContent = `${label}: ${moves
-        .map((m) => moveLabel(m.c, m.r))
+        .map((m) => moveLabel(state, m.c, m.r))
         .join(", ")}`;
       historyEl.appendChild(li);
     }
@@ -367,19 +248,24 @@
     renderHistory();
   }
 
-  function getCss(name) {
-    return getComputedStyle(document.documentElement)
-      .getPropertyValue(name)
-      .trim();
-  }
-
   canvas.addEventListener("click", (e) => {
     const cell = pixelToCell(e.clientX, e.clientY);
     if (!cell) return;
-    place(cell.c, cell.r);
+    const res = place(state, cell.c, cell.r);
+    if (!res.ok) return;
+    if (res.winner) {
+      banner.textContent = `${playerName(res.winner)} wins!`;
+      banner.hidden = false;
+    }
+    renderAll();
   });
 
-  undoBtn.addEventListener("click", undo);
+  undoBtn.addEventListener("click", () => {
+    if (undo(state)) {
+      banner.hidden = true;
+      renderAll();
+    }
+  });
   restartBtn.addEventListener("click", () => {
     if (state.history.length === 0 || confirm("Restart the game?")) {
       resetGame(state.size);
@@ -399,9 +285,12 @@
   document.addEventListener("keydown", (e) => {
     if (e.key === "z" && (e.ctrlKey || e.metaKey)) {
       e.preventDefault();
-      undo();
+      if (undo(state)) {
+        banner.hidden = true;
+        renderAll();
+      }
     }
   });
 
-  resetGame(state.size);
+  resetGame(19);
 })();
