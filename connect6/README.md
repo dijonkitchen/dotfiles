@@ -5,13 +5,7 @@ build step, no dependencies — open `index.html` and play.
 
 ## How to run
 
-```sh
-# from the repo root
-python3 -m http.server --directory connect6 8000
-# then open http://localhost:8000
-```
-
-Or just open `connect6/index.html` directly in a browser.
+Open `connect6/index.html` in a browser. No build step, no server required.
 
 ## Rules implemented
 
