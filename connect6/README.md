@@ -36,6 +36,19 @@ make test-connect6
 node --test 'connect6/tests/*.test.mjs'
 ```
 
+## Type-checking
+
+`engine.js` is annotated with `// @ts-check` and JSDoc `@typedef`s
+(`Cell`, `Player`, `Move`, `GameState`, `PlaceResult`, ...). Editors with
+TypeScript support get autocomplete and inline errors for free; CI can run:
+
+```sh
+make typecheck-connect6
+```
+
+This invokes `tsc` via `npx` — no `package.json` or local install required,
+and the shipped site is still plain JavaScript with zero dependencies.
+
 Tests cover: turn progression (Black opens with 1, then 2 per turn),
 out-of-bounds and occupied-cell rejection, win detection across all four
 directions, the 5-not-6 negative case, post-win move rejection, undo across
