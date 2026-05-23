@@ -13,16 +13,14 @@ SH_FILES := \
 	.claude/statusline-command.sh \
 	.claude/hooks/session-start.sh
 
-.PHONY: help test-deps lint test test-connect6 typecheck-connect6 check
+.PHONY: help test-deps lint test check
 
 help:
 	@echo "Targets:"
-	@echo "  test-deps           Install bats, shellcheck, jq (macOS: brew; Linux: apt)"
-	@echo "  lint                Run shellcheck and JSON validation"
-	@echo "  test                Run bats smoke tests + connect6 engine tests"
-	@echo "  test-connect6       Run connect6 engine tests only"
-	@echo "  typecheck-connect6  Type-check connect6/engine.js via JSDoc + tsc"
-	@echo "  check               lint + test (what CI runs)"
+	@echo "  test-deps  Install bats, shellcheck, jq (macOS: brew; Linux: apt)"
+	@echo "  lint       Run shellcheck and JSON validation"
+	@echo "  test       Run bats smoke tests"
+	@echo "  check      lint + test (what CI runs)"
 
 test-deps:
 ifeq ($(OS),Darwin)
@@ -35,15 +33,7 @@ lint:
 	shellcheck --severity=warning $(SH_FILES)
 	jq empty .claude/settings.json
 
-test: test-connect6
+test:
 	bats tests/
-
-test-connect6:
-	node --test 'connect6/tests/*.test.mjs'
-
-typecheck-connect6:
-	npx -y -p typescript@5.6 tsc --noEmit --allowJs --checkJs \
-		--target es2022 --module commonjs --lib es2022,dom \
-		connect6/engine.js
 
 check: lint test
