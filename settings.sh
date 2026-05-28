@@ -22,3 +22,6 @@ source "$HOME/dotfiles/ruby.sh"
 source "$HOME/dotfiles/python.sh"
 
 export PATH="$HOME/Library/Application Support/JetBrains/Toolbox/scripts:$PATH"
+
+# Claude Code native installer drops its binary in ~/.local/bin
+export PATH="$HOME/.local/bin:$PATH"
