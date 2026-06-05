@@ -56,6 +56,11 @@ git subtree pull --prefix=.agent/skills \
 You may need to add `/usr/local/bin`
 as [shell script path for IntelliJ](https://www.jetbrains.com/help/idea/working-with-the-ide-features-from-command-line.html#toolbox).
 
+## Notes
+
+- [Python type checkers: `ty` vs. the rest](docs/python-type-checkers.md) —
+  evaluation and recommendation for this Astral/`uv`-based setup.
+
 
 ## Backup brew packages
 
