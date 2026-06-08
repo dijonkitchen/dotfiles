@@ -33,7 +33,11 @@ link_skills_into() {
 
 # --- Claude Code -----------------------------------------------------------
 mkdir -p "$HOME/.claude"
-ln $LN_OPTS "$SCRIPT_DIR/.claude/settings.json"        "$HOME/.claude/settings.json"
+# User-scope settings come from settings.global.json. The sibling
+# settings.json holds the dotfiles repo's SessionStart bootstrap hook and
+# is read only as *project* settings when working in this repo -- linking
+# it at user scope would fire that project-relative hook in every project.
+ln $LN_OPTS "$SCRIPT_DIR/.claude/settings.global.json"  "$HOME/.claude/settings.json"
 ln $LN_OPTS "$SCRIPT_DIR/.claude/statusline-command.sh" "$HOME/.claude/statusline-command.sh"
 ln $LN_OPTS "$SCRIPT_DIR/.claude/CLAUDE.md"             "$HOME/.claude/CLAUDE.md"
 link_skills_into "$HOME/.claude/skills"
