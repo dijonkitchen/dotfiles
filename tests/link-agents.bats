@@ -19,9 +19,19 @@ teardown() {
   [ -L "$HOME/.claude/statusline-command.sh" ]
   [ -L "$HOME/.claude/CLAUDE.md" ]
 
-  # Each link should resolve to a real file inside the repo copy.
-  [ "$(readlink "$HOME/.claude/settings.json")" = "$SANDBOX_REPO/.claude/settings.json" ]
+  # Each link should resolve to a real file inside the repo copy. The
+  # user-scope settings come from settings.global.json, NOT the dotfiles
+  # project settings.json (which carries the repo-only bootstrap hook).
+  [ "$(readlink "$HOME/.claude/settings.json")" = "$SANDBOX_REPO/.claude/settings.global.json" ]
   [ "$(readlink "$HOME/.claude/CLAUDE.md")"      = "$SANDBOX_REPO/.claude/CLAUDE.md" ]
+}
+
+@test "global settings carry no project-relative hook; project settings do" {
+  # The user-scope file must not reference \$CLAUDE_PROJECT_DIR, or its
+  # hooks would fire (and error) in every project. The project file is
+  # where the SessionStart bootstrap hook belongs.
+  ! grep -q 'CLAUDE_PROJECT_DIR' "$PROJECT_ROOT/.claude/settings.global.json"
+  grep -q 'session-start.sh' "$PROJECT_ROOT/.claude/settings.json"
 }
 
 @test "links every skill folder under .agent/skills/" {
