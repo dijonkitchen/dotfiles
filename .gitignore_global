@@ -110,3 +110,5 @@ fabric.properties
 
 # Built Visual Studio Code Extensions
 *.vsix
+
+**/.claude/.cc-writes/
