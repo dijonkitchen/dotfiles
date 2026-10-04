@@ -12,5 +12,11 @@
     "type": "command",
     "command": "bash ~/.claude/statusline-command.sh"
   },
-  "editorMode": "vim"
+  "sandbox": {
+    "enabled": true,
+    "allowUnsandboxedCommands": false
+  },
+  "theme": "auto",
+  "editorMode": "normal",
+  "autoCompactEnabled": true
 }
