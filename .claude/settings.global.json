@@ -16,7 +16,5 @@
     "enabled": true,
     "allowUnsandboxedCommands": false
   },
-  "theme": "auto",
-  "editorMode": "normal",
-  "autoCompactEnabled": true
+  "theme": "auto"
 }
